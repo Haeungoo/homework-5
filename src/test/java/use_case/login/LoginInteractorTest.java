@@ -55,7 +55,7 @@ public class LoginInteractorTest {
         LoginOutputBoundary successPresenter = new LoginOutputBoundary() {
             @Override
             public void prepareSuccessView(LoginOutputData user) {
-                assertEquals(userRepository.getCurrentUser(), user.getUsername());
+                assertEquals("Paul", userRepository.getCurrentUserName());
             }
 
             @Override
@@ -65,7 +65,7 @@ public class LoginInteractorTest {
         };
 
         LoginInputBoundary interactor = new LoginInteractor(userRepository, successPresenter);
-        assertNull(userRepository.getCurrentUser());
+        assertNull(userRepository.getCurrentUserName());
         interactor.execute(inputData);
     }
 

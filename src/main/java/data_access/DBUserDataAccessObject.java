@@ -71,7 +71,7 @@ public class DBUserDataAccessObject implements SignupUserDataAccessInterface,
     }
 
     @Override
-    public String getCurrentUser() {
+    public String getCurrentUserName() {
         return "";
     }
 
